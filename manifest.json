@@ -1,0 +1,30 @@
+{
+	"manifest_version": 2,
+
+	"name": "Reddit Open All",
+	"version": "0.0.1",
+	"description": "Open all links on current page from Reddit.",
+
+	"author": "Yihang Ho",
+
+	"page_action": {
+		"default_title": "Reddit Open All"
+	},
+
+	"background": {
+		"scripts": ["background.js"],
+		"persistent": false
+	},
+
+	"content_scripts": [
+		{
+			"matches": ["http://*.reddit.com/*", "https://*.reddit.com/*"],
+			"js": ["jquery-1.10.2.min.js", "content.js"]
+		}
+	],
+
+	"permissions": [
+		"tabs"
+	]
+}
+
