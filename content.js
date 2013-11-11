@@ -7,13 +7,14 @@ chrome.runtime.onMessage.addListener(function(msg, sender, callback) {
 			var link = $(this).attr("href");
 			var title = $(this).text();
 			var author = $(this).parent("p.title").siblings("p.tagline").children("a.author").text();
+			var comment_link = $(this).parent("p.title").siblings("ul").find("a.comments").attr("href");
 
 			// Links that point to another reddit page are often relative path
 			if (link.substr(0, 4) != "http") {
 				link = "http://www.reddit.com" + link;
 			}
 
-			response.links.push({ url: link, title: title, author: author });
+			response.links.push({ url: link, title: title, author: author, comment: comment_link });
 
 			num_anchors--;
 			if (!num_anchors) {

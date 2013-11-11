@@ -31,7 +31,6 @@ chrome.pageAction.onClicked.addListener(function(tab) {
 				key = encodeURIComponent(key);
 				output += key + "=" + value + "&";
 			}
-			console.log(output);
 			return output.substr(0, output.length-1);
 		}
 	});

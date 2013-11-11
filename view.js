@@ -17,5 +17,6 @@ $(document).ready(function() {
 		$("iframe#target-page").attr("src", parameters.url);
 		$("a#author").text(parameters.author);
 		$("a#author").attr("href", "http://www.reddit.com/user/" + parameters.author);
+		$("a#comment").attr("href", parameters.comment);
 	}
 });
